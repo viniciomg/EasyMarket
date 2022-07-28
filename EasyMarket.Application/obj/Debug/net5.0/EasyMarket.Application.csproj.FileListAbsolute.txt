@@ -1,0 +1,12 @@
+C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Application\bin\Debug\net5.0\EasyMarket.Application.deps.json
+C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Application\bin\Debug\net5.0\EasyMarket.Application.dll
+C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Application\bin\Debug\net5.0\ref\EasyMarket.Application.dll
+C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Application\bin\Debug\net5.0\EasyMarket.Application.pdb
+C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Application\obj\Debug\net5.0\EasyMarket.Application.csproj.AssemblyReference.cache
+C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Application\obj\Debug\net5.0\EasyMarket.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Application\obj\Debug\net5.0\EasyMarket.Application.AssemblyInfoInputs.cache
+C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Application\obj\Debug\net5.0\EasyMarket.Application.AssemblyInfo.cs
+C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Application\obj\Debug\net5.0\EasyMarket.Application.csproj.CoreCompileInputs.cache
+C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Application\obj\Debug\net5.0\EasyMarket.Application.dll
+C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Application\obj\Debug\net5.0\ref\EasyMarket.Application.dll
+C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Application\obj\Debug\net5.0\EasyMarket.Application.pdb
