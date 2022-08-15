@@ -5,8 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="AutoMapper\" />
-    <Folder Include="Services\" />
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EasyMarket.Domain.Dto\EasyMarket.Domain.Dto.csproj" />
+    <ProjectReference Include="..\EasyMarket.Infra\EasyMarket.Infra.csproj" />
   </ItemGroup>
 
 </Project>

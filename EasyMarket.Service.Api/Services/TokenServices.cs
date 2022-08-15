@@ -1,4 +1,4 @@
-﻿using EasyMarket.Domain.Entityes;
+using EasyMarket.Domain.Entityes;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -12,17 +12,17 @@ namespace EasyMarket.Service.Api.Services
 {
     public static  class TokenServices
     {
-        public static string GenerateToken(User user)
+        public static string GenerateToken(Users user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(settings.Seceet);
             var tokenDesciptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[] {
-                    new Claim(ClaimTypes.Name, user.UserName),  //user.Identity.Name --classe da asp net pode ser chamado da controller
-                    new Claim(ClaimTypes.Role, user.Role)  // user.IsInRole --claase do .net pode ser chamado em outros lugares.
+                    new Claim(ClaimTypes.Name, user.nome),  //user.Identity.Name --classe da asp net pode ser chamado da controller
+                    new Claim(ClaimTypes.Role, user.Roles.Descricao)  // user.IsInRole --claase do .net pode ser chamado em outros lugares.
                 }),
-                Expires = DateTime.UtcNow.AddHours(2),
+                Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials =  new SigningCredentials(
                     new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };

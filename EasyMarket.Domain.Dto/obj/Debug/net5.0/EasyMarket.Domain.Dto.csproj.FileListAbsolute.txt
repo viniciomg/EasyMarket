@@ -10,3 +10,6 @@ C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Domain.Dto\obj\Deb
 C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Domain.Dto\obj\Debug\net5.0\EasyMarket.Domain.Dto.dll
 C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Domain.Dto\obj\Debug\net5.0\ref\EasyMarket.Domain.Dto.dll
 C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Domain.Dto\obj\Debug\net5.0\EasyMarket.Domain.Dto.pdb
+C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Domain.Dto\bin\Debug\net5.0\EasyMarket.Domain.dll
+C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Domain.Dto\bin\Debug\net5.0\EasyMarket.Domain.pdb
+C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Domain.Dto\obj\Debug\net5.0\EasyMarket.Domain.Dto.csproj.CopyComplete

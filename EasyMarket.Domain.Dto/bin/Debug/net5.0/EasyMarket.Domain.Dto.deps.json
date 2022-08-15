@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v5.0": {
       "EasyMarket.Domain.Dto/1.0.0": {
+        "dependencies": {
+          "EasyMarket.Domain": "1.0.0"
+        },
         "runtime": {
           "EasyMarket.Domain.Dto.dll": {}
+        }
+      },
+      "EasyMarket.Domain/1.0.0": {
+        "runtime": {
+          "EasyMarket.Domain.dll": {}
         }
       }
     }
   },
   "libraries": {
     "EasyMarket.Domain.Dto/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EasyMarket.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "EasyMarket.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/EasyMarket.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EasyMarket.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "EasyMarket.Domain/1.0.0": {
+      "type": "project",
+      "path": "../EasyMarket.Domain/EasyMarket.Domain.csproj",
+      "msbuildProject": "../EasyMarket.Domain/EasyMarket.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "EasyMarket.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\vinicio.magalhaes\\.nuget\\packages\\": {}
@@ -36,7 +55,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\vinicio.magalhaes\\source\\repos\\EasyMarket\\EasyMarket.Domain\\EasyMarket.Domain.csproj": {
+              "projectPath": "C:\\Users\\vinicio.magalhaes\\source\\repos\\EasyMarket\\EasyMarket.Domain\\EasyMarket.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

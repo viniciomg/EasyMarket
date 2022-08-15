@@ -2,7 +2,6 @@ C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Domain\bin\Debug\n
 C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Domain\bin\Debug\net5.0\EasyMarket.Domain.dll
 C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Domain\bin\Debug\net5.0\ref\EasyMarket.Domain.dll
 C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Domain\bin\Debug\net5.0\EasyMarket.Domain.pdb
-C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Domain\obj\Debug\net5.0\EasyMarket.Domain.csproj.AssemblyReference.cache
 C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Domain\obj\Debug\net5.0\EasyMarket.Domain.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Domain\obj\Debug\net5.0\EasyMarket.Domain.AssemblyInfoInputs.cache
 C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Domain\obj\Debug\net5.0\EasyMarket.Domain.AssemblyInfo.cs
@@ -10,3 +9,4 @@ C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Domain\obj\Debug\n
 C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Domain\obj\Debug\net5.0\EasyMarket.Domain.dll
 C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Domain\obj\Debug\net5.0\ref\EasyMarket.Domain.dll
 C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Domain\obj\Debug\net5.0\EasyMarket.Domain.pdb
+C:\Users\vinicio.magalhaes\source\repos\EasyMarket\EasyMarket.Domain\obj\Debug\net5.0\EasyMarket.Domain.csproj.AssemblyReference.cache
