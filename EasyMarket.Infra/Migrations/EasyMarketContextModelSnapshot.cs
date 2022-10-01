@@ -19,11 +19,71 @@ namespace EasyMarket.Infra.Migrations
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
+            modelBuilder.Entity("EasyMarket.Domain.Entityes.EntradaItems", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<int>("EntradasId")
+                        .HasColumnType("integer");
+
+                    b.Property<float>("PrecoCompra")
+                        .HasColumnType("real");
+
+                    b.Property<int>("ProdutoId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("quantidade")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntradasId");
+
+                    b.HasIndex("ProdutoId");
+
+                    b.ToTable("EntradaItems");
+                });
+
+            modelBuilder.Entity("EasyMarket.Domain.Entityes.Entradas", b =>
+                {
+                    b.Property<int?>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasIdentityOptions(1L, null, null, null, null, null)
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("ChaveDeAcesso")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime>("DataNota")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<float>("NumeroNota")
+                        .HasColumnType("real");
+
+                    b.Property<float>("ValorTotal")
+                        .HasColumnType("real");
+
+                    b.Property<int>("fornecedorId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Entradas");
+                });
+
             modelBuilder.Entity("EasyMarket.Domain.Entityes.Fornecedor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
+                        .HasIdentityOptions(1L, null, null, null, null, null)
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("nomeFantasia")
@@ -48,7 +108,7 @@ namespace EasyMarket.Infra.Migrations
                     b.Property<string>("Fabricante")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("dataCadastro")
+                    b.Property<DateTime?>("dataCadastro")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("descricao")
@@ -132,6 +192,25 @@ namespace EasyMarket.Infra.Migrations
                     b.ToTable("User");
                 });
 
+            modelBuilder.Entity("EasyMarket.Domain.Entityes.EntradaItems", b =>
+                {
+                    b.HasOne("EasyMarket.Domain.Entityes.Entradas", "entradas")
+                        .WithMany("items")
+                        .HasForeignKey("EntradasId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EasyMarket.Domain.Entityes.Produtos", "produtos")
+                        .WithMany("entradaItens")
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("entradas");
+
+                    b.Navigation("produtos");
+                });
+
             modelBuilder.Entity("EasyMarket.Domain.Entityes.Users", b =>
                 {
                     b.HasOne("EasyMarket.Domain.Entityes.Roles", "Roles")
@@ -141,6 +220,16 @@ namespace EasyMarket.Infra.Migrations
                         .IsRequired();
 
                     b.Navigation("Roles");
+                });
+
+            modelBuilder.Entity("EasyMarket.Domain.Entityes.Entradas", b =>
+                {
+                    b.Navigation("items");
+                });
+
+            modelBuilder.Entity("EasyMarket.Domain.Entityes.Produtos", b =>
+                {
+                    b.Navigation("entradaItens");
                 });
 
             modelBuilder.Entity("EasyMarket.Domain.Entityes.Roles", b =>

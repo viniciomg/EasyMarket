@@ -1,5 +1,6 @@
 using AutoMapper;
 using EasyMarket.Application.Services.ProdutoService;
+using EasyMarket.Domain.Dto.Produtos;
 using EasyMarket.Domain.Entityes;
 using EasyMarket.Infra.Repositories;
 using EasyMarket.Service.Api.Controllers.Base;
@@ -53,6 +54,45 @@ namespace EasyMarket.Service.Api.Controllers
 
     }
 
+    [Authorize]
+    [HttpPost]
+    [Route("GetProdutosIdOuDescricao")]
+    public async Task<IActionResult> GetProdutosBarrasOuDescricao(ProdutosPesquisaRequestDto request)
+    {
+   
+
+      try
+      {
+        if (request.codigo == null && string.IsNullOrEmpty(request.descricao)) BadRequest("Parâmetros inválidos");
+        IEnumerable<Produtos> produtos = new List<Produtos>();
+        if (request.codigo != 0)
+        {
+          var resposta  = await _service.GetProdutoAll();
+          produtos = resposta.Where(x => x.Id == request.codigo).ToList();
+          
+          
+
+        }
+        else if (!string.IsNullOrEmpty(request.descricao))
+        {
+          var resposta = await _service.GetProdutoAll();
+          produtos =  resposta.Where(x => x.descricao.ToUpper().Contains(request.descricao.ToUpper())).ToList();
+        }
+
+        var retorno = new
+        {
+          items = produtos,
+          hasNext = true
+        };
+        return Ok(retorno);
+      }
+      catch(Exception ex)
+      {
+        return BadRequest("falha");
+      }
+
+   
+    }
 
     [Authorize]
     [HttpPost]
@@ -64,11 +104,11 @@ namespace EasyMarket.Service.Api.Controllers
       model.dataCadastro = DateTime.Now;
       var retorno = await _service.CreateProdutoAsync(model);
       if (retorno.Id != null && retorno.Id == 0)
-        return NotFound("Ocorreu algum orro durante o processo!");
+        return NotFound("Ocorreu algum erro durante o processo!");
       return new
       {
         idRegister = retorno.Id,
-        retorno = "Cadastro de produto relaizado com sucesso!"
+        retorno = "Cadastro de produto realizado com sucesso!"
 
       };
 

@@ -1,12 +1,17 @@
 using AutoMapper;
 using EasyMarket.Application.AutoMapper;
 using EasyMarket.Application.Services;
+using EasyMarket.Application.Services.EntradasService;
+using EasyMarket.Application.Services.EntradasService.EntradaItemsService;
 using EasyMarket.Application.Services.ProdutoService;
 using EasyMarket.Application.Services.UserService;
+using EasyMarket.Domain.Dto.Dto_s.Entradas;
 using EasyMarket.Domain.Dto.Dto_s.User;
 using EasyMarket.Domain.Entityes;
 using EasyMarket.Infra.Context;
 using EasyMarket.Infra.Repositories;
+using EasyMarket.Infra.Repositories.EntradasRepository;
+using EasyMarket.Infra.Repositories.EntradasRepository.EntradaItemsRepository;
 using EasyMarket.Infra.Repositories.ProdutoRepository;
 using EasyMarket.Infra.Repositories.User;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -53,7 +58,12 @@ namespace EasyMarket.Service.Api
 
       services.AddScoped<IProdutoService, ProdutoService>();
       services.AddScoped<IProdutoRepository, ProdutoRepository>();
-      
+
+      services.AddScoped<IEntradasRepository, EntradasRepository>();
+      services.AddScoped<IEntradasService, EntradasService>();
+
+      services.AddScoped<IEntradaItemsRepository, EntradaItemsRepository>();
+      services.AddScoped<IEntradaItemsService, EntradaItemsService>();
 
       var key = Encoding.ASCII.GetBytes(settings.Seceet);
       services.AddAuthentication(
@@ -85,6 +95,8 @@ namespace EasyMarket.Service.Api
         cfg.CreateMap<Users, CreateUserRequest>();
         cfg.CreateMap<Users, UserDtoResponse>();
         cfg.CreateMap<UserDtoResponse, Users>();
+        cfg.CreateMap<EntradasRequestDto, Entradas>();
+        cfg.CreateMap<EntradaItemsRequestDto, EntradaItems>();
       });
 
       IMapper mapper = configuration.CreateMapper();

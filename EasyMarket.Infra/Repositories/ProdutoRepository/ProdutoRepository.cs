@@ -1,5 +1,6 @@
 using EasyMarket.Domain.Entityes;
 using EasyMarket.Infra.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,9 +60,20 @@ namespace EasyMarket.Infra.Repositories.ProdutoRepository
 
     public async Task<Produtos> Update(Produtos entity)
     {
-      var retorno= _context.Produtos.Update(entity).Entity;
+      var retorno = _context.Produtos.AsNoTracking().FirstOrDefaultAsync(x => x.Id == entity.Id);
+      
+      if (retorno == null) return null;
+      if (entity.precoVenda == null) entity.precoVenda = retorno.Result.precoVenda;
+      if (entity.estoque == null) entity.estoque = retorno.Result.estoque;
+      if (entity.descricao == null) entity.descricao = retorno.Result.descricao;
+      if (entity.Fabricante == null) entity.descricao = retorno.Result.Fabricante;
+      if (entity.status == null) entity.status = retorno.Result.status;
+      if (entity.dataCadastro == null) entity.dataCadastro = retorno.Result.dataCadastro;
+
+      var update = _context.Produtos.Update(entity).Entity;
       _context.SaveChanges();
-      return retorno;
+      return update;
+      
     }
 
   }

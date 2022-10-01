@@ -4,10 +4,25 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace EasyMarket.Infra.Migrations
 {
-    public partial class initial : Migration
+    public partial class entradas : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Entradas",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    DataNota = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    DataCadastro = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    NumeroNota = table.Column<float>(type: "real", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Entradas", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Fornecedor",
                 columns: table => new
@@ -27,11 +42,14 @@ namespace EasyMarket.Infra.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:IdentitySequenceOptions", "'5', '1', '', '', 'False', '1'")
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     descricao = table.Column<string>(type: "text", nullable: true),
                     precoVenda = table.Column<float>(type: "real", nullable: false),
                     estoque = table.Column<int>(type: "integer", nullable: false),
-                    status = table.Column<bool>(type: "boolean", nullable: false)
+                    status = table.Column<bool>(type: "boolean", nullable: false),
+                    Fabricante = table.Column<string>(type: "text", nullable: true),
+                    dataCadastro = table.Column<DateTime>(type: "timestamp without time zone", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -88,6 +106,9 @@ namespace EasyMarket.Infra.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Entradas");
+
             migrationBuilder.DropTable(
                 name: "Fornecedor");
 

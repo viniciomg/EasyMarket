@@ -8,6 +8,7 @@ using EasyMarket.Application.AutoMapper;
 using AutoMapper;
 using EasyMarket.Domain.Entityes;
 using EasyMarket.Domain.Dto.Dto_s.User;
+using EasyMarket.Domain.Dto.Dto_s.Entradas;
 
 namespace EasyMarket.Application.AutoMapper
 {
@@ -20,6 +21,9 @@ namespace EasyMarket.Application.AutoMapper
       {
         cfg.CreateMap<CreateUserRequest, Users>();
         cfg.CreateMap<Users, CreateUserRequest>();
+        cfg.CreateMap<EntradasRequestDTO, Entradas>();
+        cfg.CreateMap<EntradaItemsRequestDto, EntradaItems>();
+        
       });
 
       IMapper mapper = configuration.CreateMapper();
@@ -28,5 +32,9 @@ namespace EasyMarket.Application.AutoMapper
 
     }
 
+  }
+
+  internal class EntradasRequestDTO
+  {
   }
 }

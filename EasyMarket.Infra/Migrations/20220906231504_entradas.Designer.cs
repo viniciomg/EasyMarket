@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EasyMarket.Infra.Migrations
 {
     [DbContext(typeof(EasyMarketContext))]
-    [Migration("20220815031441_initial2")]
-    partial class initial2
+    [Migration("20220906231504_entradas")]
+    partial class entradas
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,27 @@ namespace EasyMarket.Infra.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+            modelBuilder.Entity("EasyMarket.Domain.Entityes.Entradas", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime>("DataNota")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<float>("NumeroNota")
+                        .HasColumnType("real");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Entradas");
+                });
 
             modelBuilder.Entity("EasyMarket.Domain.Entityes.Fornecedor", b =>
                 {
@@ -44,10 +65,14 @@ namespace EasyMarket.Infra.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
+                        .HasIdentityOptions(5L, null, null, null, null, null)
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("Fabricante")
                         .HasColumnType("text");
+
+                    b.Property<DateTime?>("dataCadastro")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("descricao")
                         .HasColumnType("text");

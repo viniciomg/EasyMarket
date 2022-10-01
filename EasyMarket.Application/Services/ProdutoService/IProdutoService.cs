@@ -12,5 +12,7 @@ namespace EasyMarket.Application.Services.ProdutoService
     Task<Produtos> UpdateProdutoAsync(Produtos model);
 
     Task<Produtos> ExlcuirProduto(Produtos model);
+
+    
   }
 }

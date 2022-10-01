@@ -50,7 +50,7 @@ namespace EasyMarket.Service.Api.Controllers
         user.Password = "";
         return new
         {
-          user = new { user.nome, user.username },
+          user = new { user.nome, user.username},
           token = token
         };
       }
@@ -100,7 +100,7 @@ namespace EasyMarket.Service.Api.Controllers
     //[Authorize]
     [HttpPut]
     [Route("updateUser")]
-    public async Task<ActionResult<dynamic>> UpdateAsync([FromBody] CreateUserRequest model)
+    public async Task<ActionResult<dynamic>> UpdateAsync([FromBody] CreateUserRequest model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
     {
       string mensagem = "";
       if (model == null || model.Id ==null)

@@ -919,19 +919,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vinicio.magalhaes\\.nuget\\packages\\": {}
+    "C:\\Users\\erick\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vinicio.magalhaes\\source\\repos\\EasyMarket\\EasyMarket.Application\\EasyMarket.Application.csproj",
+      "projectUniqueName": "E:\\Pós-Graduação Engenharia de Software\\TCC\\versao nova\\EasyMarket\\EasyMarket.Application\\EasyMarket.Application.csproj",
       "projectName": "EasyMarket.Application",
-      "projectPath": "C:\\Users\\vinicio.magalhaes\\source\\repos\\EasyMarket\\EasyMarket.Application\\EasyMarket.Application.csproj",
-      "packagesPath": "C:\\Users\\vinicio.magalhaes\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vinicio.magalhaes\\source\\repos\\EasyMarket\\EasyMarket.Application\\obj\\",
+      "projectPath": "E:\\Pós-Graduação Engenharia de Software\\TCC\\versao nova\\EasyMarket\\EasyMarket.Application\\EasyMarket.Application.csproj",
+      "packagesPath": "C:\\Users\\erick\\.nuget\\packages\\",
+      "outputPath": "E:\\Pós-Graduação Engenharia de Software\\TCC\\versao nova\\EasyMarket\\EasyMarket.Application\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\vinicio.magalhaes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\erick\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -939,20 +944,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://consinco.pkgs.visualstudio.com/_packaging/consinco-nuget/nuget/v3/index.json": {},
-        "https://www.myget.org/F/tnf/api/v3/index.json": {},
-        "https://www.myget.org/F/tnfdev/api/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\vinicio.magalhaes\\source\\repos\\EasyMarket\\EasyMarket.Domain.Dto\\EasyMarket.Domain.Dto.csproj": {
-              "projectPath": "C:\\Users\\vinicio.magalhaes\\source\\repos\\EasyMarket\\EasyMarket.Domain.Dto\\EasyMarket.Domain.Dto.csproj"
+            "E:\\Pós-Graduação Engenharia de Software\\TCC\\versao nova\\EasyMarket\\EasyMarket.Domain.Dto\\EasyMarket.Domain.Dto.csproj": {
+              "projectPath": "E:\\Pós-Graduação Engenharia de Software\\TCC\\versao nova\\EasyMarket\\EasyMarket.Domain.Dto\\EasyMarket.Domain.Dto.csproj"
             },
-            "C:\\Users\\vinicio.magalhaes\\source\\repos\\EasyMarket\\EasyMarket.Infra\\EasyMarket.Infra.csproj": {
-              "projectPath": "C:\\Users\\vinicio.magalhaes\\source\\repos\\EasyMarket\\EasyMarket.Infra\\EasyMarket.Infra.csproj"
+            "E:\\Pós-Graduação Engenharia de Software\\TCC\\versao nova\\EasyMarket\\EasyMarket.Infra\\EasyMarket.Infra.csproj": {
+              "projectPath": "E:\\Pós-Graduação Engenharia de Software\\TCC\\versao nova\\EasyMarket\\EasyMarket.Infra\\EasyMarket.Infra.csproj"
             }
           }
         }
@@ -991,7 +993,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }

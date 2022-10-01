@@ -18,8 +18,11 @@ public   class Produtos
     public int  estoque { get; set; }
     public bool status { get; set; }
     public string? Fabricante { get; set; }
+    public ICollection<EntradaItems> entradaItens { get; set; }
+    
 
     public DateTime? dataCadastro { get; set; }
+    
 
   }
 }

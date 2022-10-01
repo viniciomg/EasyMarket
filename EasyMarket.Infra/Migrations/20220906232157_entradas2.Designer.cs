@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EasyMarket.Infra.Migrations
 {
     [DbContext(typeof(EasyMarketContext))]
-    [Migration("20220815033107_initial3")]
-    partial class initial3
+    [Migration("20220906232157_entradas2")]
+    partial class entradas2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,33 @@ namespace EasyMarket.Infra.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+            modelBuilder.Entity("EasyMarket.Domain.Entityes.Entradas", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasIdentityOptions(1L, null, null, null, null, null)
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime>("DataNota")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<float>("NumeroNota")
+                        .HasColumnType("real");
+
+                    b.Property<int>("produtosId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("produtosId");
+
+                    b.ToTable("Entradas");
+                });
 
             modelBuilder.Entity("EasyMarket.Domain.Entityes.Fornecedor", b =>
                 {
@@ -50,7 +77,7 @@ namespace EasyMarket.Infra.Migrations
                     b.Property<string>("Fabricante")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("dataCadastro")
+                    b.Property<DateTime?>("dataCadastro")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("descricao")
@@ -134,6 +161,17 @@ namespace EasyMarket.Infra.Migrations
                     b.ToTable("User");
                 });
 
+            modelBuilder.Entity("EasyMarket.Domain.Entityes.Entradas", b =>
+                {
+                    b.HasOne("EasyMarket.Domain.Entityes.Produtos", "produtos")
+                        .WithMany("entradas")
+                        .HasForeignKey("produtosId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("produtos");
+                });
+
             modelBuilder.Entity("EasyMarket.Domain.Entityes.Users", b =>
                 {
                     b.HasOne("EasyMarket.Domain.Entityes.Roles", "Roles")
@@ -143,6 +181,11 @@ namespace EasyMarket.Infra.Migrations
                         .IsRequired();
 
                     b.Navigation("Roles");
+                });
+
+            modelBuilder.Entity("EasyMarket.Domain.Entityes.Produtos", b =>
+                {
+                    b.Navigation("entradas");
                 });
 
             modelBuilder.Entity("EasyMarket.Domain.Entityes.Roles", b =>
